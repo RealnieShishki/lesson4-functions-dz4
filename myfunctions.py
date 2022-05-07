@@ -8,36 +8,26 @@
 
 
 def simple_separator():
-    """
-    Функция создает красивый резделитель из 10-и звездочек (**********)
-    :return: **********
-    """
+    a = '**********'
+    return a
     pass
 
 
-print(simple_separator() == '**********')  # True
+print(simple_separator() == '**********') # True
 
 
 def long_separator(count):
-    """
-    Функция создает разделитель из звездочек число которых можно регулировать параметром count
-    :param count: количество звездочек
-    :return: строка разделитель, примеры использования ниже
-    """
+    b = '*' * count
+    return b
     pass
-
 
 print(long_separator(3) == '***')  # True
 print(long_separator(4) == '****')  # True
 
 
 def separator(simbol, count):
-    """
-    Функция создает разделитель из любых символов любого количества
-    :param simbol: символ разделителя
-    :param count: количество повторений
-    :return: строка разделитель примеры использования ниже
-    """
+    z = simbol * count
+    return z
     pass
 
 
@@ -46,15 +36,12 @@ print(separator('#', 5) == '#####')  # True
 
 
 def hello_world():
-    """
-    Функция печатает Hello World в формате:
-    **********
-
-    Hello World!
-
-    ##########
-    :return: None
-    """
+    print('**********\n'
+          '\n'
+          'Hello World!\n'
+          '\n'
+          '##########')
+    return
     pass
 
 
@@ -69,52 +56,26 @@ hello_world()
 
 
 def hello_who(who='World'):
-    """
-    Функция печатает приветствие в красивом формате
-    **********
-
-    Hello {who}!
-
-    ##########
-    :param who: кого мы приветствуем, по умолчанию World
-    :return: None
-    """
+    print('**********\n'
+          '\n'
+          'Hello',who,'!\n'
+          '\n'
+          '##########')
+    return
     pass
 
 
-'''
-**********
-
-Hello World!
-
-##########
-'''
 hello_who()
-'''
-**********
-
-Hello Max!
-
-##########
-'''
 hello_who('Max')
-'''
-**********
-
-Hello Kate!
-
-##########
-'''
 hello_who('Kate')
 
 
 def pow_many(power, *args):
-    """
-    Функция складывает любое количество цифр и возводит результат в степень power (примеры использования ниже)
-    :param power: степень
-    :param args: любое количество цифр
-    :return: результат вычисления # True -> (1 + 2)**1
-    """
+    result = 0
+    for number in args:
+        result += number
+    result = result ** power
+    return result
     pass
 
 
@@ -126,13 +87,9 @@ print(pow_many(2, 1, 2, 3, 4) == 100)  # True -> (1 + 2 + 3 + 4)**2 == 10**2 == 
 
 
 def print_key_val(**kwargs):
-    """
-    Функция выводит переданные параметры в фиде key --> value
-    key - имя параметра
-    value - значение параметра
-    :param kwargs: любое количество именованных параметров
-    :return: None
-    """
+    for i, j in kwargs.items():
+        print(i, '-->', j)
+    return
     pass
 
 
@@ -149,15 +106,11 @@ print_key_val(animal='Cat', is_animal=True)
 
 
 def my_filter(iterable, function):
-    """
-    (Усложненое задание со *)
-    Функция фильтрует последовательность iterable и возвращает новую
-    Если function от элемента последовательности возвращает True, то элемент входит в новую последовательность иначе нет
-    (примеры ниже)
-    :param iterable: входаня последовательности
-    :param function: функция фильтрации
-    :return: новая отфильтрованная последовательность
-    """
+    result = []
+    for i in iterable:
+        if function(i):
+            result.append(i)
+    return result
     pass
 
 
